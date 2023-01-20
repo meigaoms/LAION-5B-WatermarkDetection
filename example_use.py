@@ -42,8 +42,8 @@ if __name__ == '__main__':
     if torch.cuda.is_available():
         model.cuda()
     
-    watermark_im = preprocessing(Image.open('./images/watermark_example.png').convert('RGB'))
-    clear_im = preprocessing(Image.open('./images/clear_example.png').convert('RGB'))
+    watermark_im = preprocessing(Image.open('./images/watermark_example.png').convert('RGB')).cuda()
+    clear_im = preprocessing(Image.open('./images/clear_example.png').convert('RGB')).cuda()
 
     batch = torch.stack([watermark_im, clear_im])
 
